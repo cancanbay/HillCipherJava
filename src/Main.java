@@ -57,7 +57,7 @@ public class Main {
 
     public static String decryptHill(int[][] matriks, String wordToBeDecrypted) {
         int det = (matriks[0][0] * matriks[1][1]) - (matriks[0][1]* matriks[1][0]);
-        int num = findInverseOfModulo26(det);
+        int num = findInverseOfModuloN(det,26);
         if(num == -1){
             return "This Matriks Cannot be the key of decryption";
         }
@@ -68,7 +68,7 @@ public class Main {
             int indexOfFirst = english_Alphabet.indexOf(firstChar);
             int indexOfSecond = english_Alphabet.indexOf(secondChar);
             int determinant = (matriks[0][0] * matriks[1][1]) - (matriks[0][1]* matriks[1][0]);
-            int inverseOfDet = findInverseOfModulo26(determinant);
+            int inverseOfDet = findInverseOfModuloN(determinant,26);
             int[][] adjacentMatriks =  findAdjacentOfMatriks(matriks);
             adjacentMatriks[0][1] += 26;
             adjacentMatriks[1][0] += 26;
@@ -95,19 +95,9 @@ public class Main {
         return adjacentMatriks;
     }
 
-    public static int findInverseOfModulo26(int number) {
-        for (int i = 1; i < 26; i++) {
-            if (i * number % 26 == 1) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-
-    public static int findInverseOfModulo29(int number) {
-        for (int i = 1; i < 29; i++) {
-            if (i * number % 29 == 1) {
+    public static int findInverseOfModuloN(int number, int moduloNumber) {
+        for (int i = 1; i < moduloNumber; i++) {
+            if (i * number % moduloNumber == 1) {
                 return i;
             }
         }
