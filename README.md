@@ -3,7 +3,8 @@ This is the implementation of <b>Hill-Cipher</b> encryption via Java language.
 Program has 2 options, encryption and decryption by Hill-Cipher.
 
 If you just want to see the encryption or decryption matrix (key) input word does not matter.
-To run the program:
+<p></p>
+<p>To run the program:</p>
 <p></p>
 <ul>
   <li>Run Main.java, type 1 for encryption 2 for decryption and then enter the word and 2x2 hill-cipher matrix' elements.</li>
